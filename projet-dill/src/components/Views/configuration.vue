@@ -1,6 +1,5 @@
 <template>
     <div>
-        <br><br><br>
         <div class="columns">
             <div class="column">
                 <div>
@@ -29,31 +28,31 @@
                         Ajout de personnel
                     </h1>
                     <div class="columns">
-                    <div class="column has-text-right">
-                        <div>
-                        <label for="name">Nom :</label>
+                        <div class="column has-text-right">
+                            <div>
+                                <label for="name">Nom :</label>
+                            </div>
+                            <div>
+                                <label for="forname">Prénom :</label>
+                            </div>
+                            <div>
+                                <label for="skill">Niveau de compétence :</label>
+                            </div>
                         </div>
-                        <div>
-                        <label for="forname">Prénom :</label>
+                        <div class="column">
+                            <div>
+                                <input type="text" class="form-control" id="name" v-model="name">
+                            </div>
+                            <div>
+                                <input type="text" class="form-control" id="forname" v-model="forname">
+                            </div> 
+                            <div>
+                                <input type="text" class="form-control" id="skill" v-model="skill">
+                            </div>  
                         </div>
-                        <div>
-                        <label for="skill">Niveau de compétence :</label>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div>
-                        <input type="text" class="form-control" id="Name" v-model="name">
-                        </div>
-                        <div>
-                        <input type="text" class="form-control" id="Forname" v-model="forname">
-                        </div> 
-                        <div>
-                        <input type="text" class="form-control" id="Skill" v-model="skill">
-                        </div>  
-                    </div>
                     </div>  
                     <div class="has-text-centered">
-                    <button class="button is-info" @click="addTechnician()">Ajouter</button>
+                        <button class="button is-info" @click="addTechnician()">Ajouter</button>
                     </div>
                 </div>
             </div>
@@ -104,7 +103,6 @@ export default {
   },
   methods:{
     addTechnician() {
-            console.log(this.name, this.forname, this.skill);
             let oTemps = {
                 name: this.name,
                 forname: this.forname,
@@ -115,7 +113,7 @@ export default {
 
             if (this.name != null && this.forname != null && this.skill != null 
               && this.name != "" && this.forname != "" && this.skill != "") {
-                alert(this.name + this.forname + "a été ajouté à la base et sera disponible au prochain rafraichissement de la base.")
+                alert(this.name +" "+ this.forname + " a été ajouté à la base et sera disponible au prochain rafraichissement de la base.")
             }else{
                 alert('Une erreur est dectectée dans le formulaire');
                 
